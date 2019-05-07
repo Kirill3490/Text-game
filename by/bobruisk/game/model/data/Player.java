@@ -7,11 +7,16 @@ public class Player extends Character{
 	
 	
 	public Player() {
-		setName("Player");
-		setHp(200);
+		setName("Garon");
+		setAlive(true);
+		
+		setMaxHp(200);
+		setHp(getMaxHp());
+		
 		setLevel(1);
 		setExp(0);
 		setLevelExp(100);
+		
 		setStrength(5);
 		setDexterity(5);
 		setDefence(0);
