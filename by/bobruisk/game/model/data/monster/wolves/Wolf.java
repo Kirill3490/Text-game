@@ -9,5 +9,6 @@ public class Wolf extends Monster{
 		setHp(100);
 		setStrength(5);
 		setDexterity(4);
+		setKillExperience(100);
 	}
 }

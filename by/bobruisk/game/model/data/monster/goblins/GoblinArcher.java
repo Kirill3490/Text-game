@@ -9,5 +9,6 @@ public class GoblinArcher extends Monster{
 		setHp(140);
 		setStrength(3);
 		setDexterity(6);
+		setKillExperience(150);
 	}
 }

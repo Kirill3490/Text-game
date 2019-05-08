@@ -1,48 +1,44 @@
 package by.bobruisk.game.view;
 
-import java.awt.BorderLayout;
-import java.awt.Button;
-import java.awt.FlowLayout;
+import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
-import java.awt.Image;
+import java.awt.Insets;
 
-import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import org.omg.CORBA.PRIVATE_MEMBER;
+import by.bobruisk.game.view.mainwindow.LoadGameButton;
+import by.bobruisk.game.view.mainwindow.NewGameButton;
 
 public class MainWindow {
 	JFrame mainWindow = new JFrame("Главное меню");
-	private JPanel panel = new JPanel();
-	private JButton loadGame = new JButton();
-	private static final String PICTURES_FOLDER = "pic";
-	private static final String PICTURES_FORMAT = ".jpg";
-	private static final String PICTURE_WAY = "src\\pic\\MainWindowFon.jpg";
+	//private JPanel panel = new JPanel();
+	//private JButton loadGame = new JButton();
+	NewGameButton newGame = new NewGameButton();
+	LoadGameButton loadGame = new LoadGameButton();
+	GridBagConstraints c = new GridBagConstraints();
+	
 	
 	public MainWindow() {
 		this.mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.mainWindow.setVisible(true);
 		this.mainWindow.setSize(900, 600);
 		this.mainWindow.setLocationRelativeTo(null);
-		this.mainWindow.setLayout(new BorderLayout());
-		final ImageIcon image = new ImageIcon(PICTURE_WAY);
-		JLabel backGround = new JLabel(image); 
-		this.mainWindow.add(backGround);
-		backGround.setLayout(new FlowLayout());
-		backGround.setVisible(true);
+		this.mainWindow.setLayout(new GridBagLayout()); 
+		c.gridx = 0;    // Начало расположения по оси x
+		c.gridy = 0;	// Начало расположения элемента по оси y
+		c.gridheight = 1;
+		c.gridwidth = 1;
+		c.weightx = 0.0;
+		c.weighty = 0.9;
+		c.anchor = GridBagConstraints.WEST;
+		c.fill = GridBagConstraints.HORIZONTAL;
+		c.insets = new Insets(1, 2, 3, 4);
+		c.ipadx = 0;
+		c.ipady = 0;
 		
-		this.mainWindow.add(this.panel);
-		this.panel.setSize(400, 200);
-		this.panel.add(setLoadGame());
-	}
-
-	public JButton setLoadGame() {
-		this.loadGame.setVisible(true);
-		this.loadGame.setSize(100, 60);
-		return loadGame;
+		this.mainWindow.add(newGame, c);
 	}
 	
 	

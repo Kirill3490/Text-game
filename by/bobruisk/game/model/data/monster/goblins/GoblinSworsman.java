@@ -9,5 +9,6 @@ public class GoblinSworsman extends Monster{
 		setHp(200);
 		setStrength(8);
 		setDexterity(6);
+		setKillExperience(200);
 	}
 }

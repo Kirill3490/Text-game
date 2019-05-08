@@ -9,5 +9,6 @@ public class WolfLeader extends Monster{
 		setHp(200);
 		setStrength(7);
 		setDexterity(6);
+		setKillExperience(200);
 	}
 }

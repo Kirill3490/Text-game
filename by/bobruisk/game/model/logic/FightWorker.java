@@ -6,62 +6,47 @@ import java.util.Scanner;
 import by.bobruisk.game.model.data.Player;
 import by.bobruisk.game.model.data.monster.Monster;
 
-public abstract class FightWorker {
+public class FightWorker {
 	static Scanner scanner = new Scanner(System.in);
 	static Random random = new Random();
 
-	public static void playerAction(Player player, Monster monster) {
+	public static int playerAction() {
 		int choice = scanner.nextInt();
-		switch (choice) {
-		case 1:
-			heroAttack(player, monster);
-			break;
-		case 2:
-			heroDefence(player, monster);
-			break;
-		case 3:
+		if (choice <= 0 && choice > 3) {
+			choice = -1;
+		}
+		return choice;
+	}
 
-			break;
+	public static void monsterAction(Player player, Monster monster) {
+		if (monster.getHp() <= (monster.getMaxHp() / 3) && (chance() >= 5)) {
 
-		default:
-			break;
 		}
 	}
+
+	public static int heroAttack(Player player) {
+		return player.getStrength() * 2;
+	}
+
+	public static int monsterAttack(Monster monster) {
+		return monster.getStrength() * 2;
+	}
+
+	public static int monsterDefence(Monster monster) {
+		return monster.getDefence() + chance();
+	}
+
+	public static int heroDefence(Player player) {
+		return player.getDefence() + chance();
+	}
 	
-	public static void monsterAction(Player player, Monster monster) {
+	public static void fight(Player player, Monster monster) {
 		
 	}
 
-	private static void heroAttack(Player player, Monster monster) {
-		int playerAttack = player.getStrength() * 2;
-		int monsterHp = monster.getHp() - (playerAttack - monster.getDefence());
-		monster.setHp(monsterHp);
-	}
-	
-	private static void monsterAttack(Player player, Monster monster) {
-		int monsterAttack = monster.getStrength() * 2;
-		int playerHp = player.getHp() + player.getDefence() - monsterAttack;
-		player.setHp(playerHp);
-	}
-	
-	//private static void monsterDefence(Player player, Monster monster) {
-	//	int 
-	//}
-
-	private static void heroDefence(Player player, Monster monster) {
-		int monsterAttack = monster.getStrength() * 2;
-		int heroHp = player.getHp() - (monsterAttack - (player.getDefence() + chance()));
-		player.setHp(heroHp);
-	}
-	
-	private static void heroEscape(Player player) {
-		
-	}
-	
-	private static int chance() {
+	public static int chance() {
 		int chance = random.nextInt(7);
 		return chance;
 	}
-	
-	
+
 }
