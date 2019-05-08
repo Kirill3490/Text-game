@@ -1,13 +1,17 @@
 package by.bobruisk.game.view.mainwindow;
 
-import java.awt.Button;
+import javax.swing.JButton;
 
-public class NewGameButton {
+public class NewGameButton extends JButton{
 	
-	Button newGameButton;
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 3242L;
+	JButton newGameButton;
 	
 	public NewGameButton() {
-		this.newGameButton = new Button("Новая игра");
+		this.newGameButton = new JButton("Новая игра");
 		newGameButton.setVisible(true);
 	}
 }
