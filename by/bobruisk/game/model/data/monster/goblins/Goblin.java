@@ -6,7 +6,8 @@ public class Goblin extends Monster {
 	public Goblin() {
 		setName("Гоблин");
 		setDefence(0);
-		setHp(130);
+		setMaxHp(130);
+		setHp(getMaxHp());
 		setStrength(5);
 		setDexterity(4);
 		setKillExperience(100);

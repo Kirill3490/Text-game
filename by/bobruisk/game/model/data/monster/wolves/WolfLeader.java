@@ -6,7 +6,8 @@ public class WolfLeader extends Monster{
 	public WolfLeader() {
 		setName("Вожак стаи");
 		setDefence(2);
-		setHp(200);
+		setMaxHp(200);
+		setHp(getMaxHp());
 		setStrength(7);
 		setDexterity(6);
 		setKillExperience(200);

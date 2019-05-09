@@ -6,7 +6,8 @@ public class GoblinSworsman extends Monster{
 	public GoblinSworsman() {
 		setName("Гоблин мечник");
 		setDefence(2);
-		setHp(200);
+		setMaxHp(200);
+		setHp(getMaxHp());
 		setStrength(8);
 		setDexterity(6);
 		setKillExperience(200);

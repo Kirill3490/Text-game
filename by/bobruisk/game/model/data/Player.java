@@ -43,5 +43,22 @@ public class Player extends Character{
 		this.levelExp = levelExp;
 	}
 	
+	public void levelUp() {
+		
+		while (getExp() >= getLevelExp()) {
+			setMaxHp(getMaxHp() + 50);
+			setHp(getMaxHp());
+			
+			setLevel(getLevel()+1);
+			
+			setExp(getExp() - getLevelExp());
+			setLevelExp(getLevelExp() + 300);
+			
+			setStrength(getStrength() + 2);
+			setDexterity(getDexterity() + 1);
+			setDefence(getDefence() + 1);
+		}
+	}
+	
 	
 }
